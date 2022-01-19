@@ -1,0 +1,65 @@
+<main class="main">
+  <button
+    (click)="goToList()"
+    type="button"
+    class="btn btn-warning"
+    [routerLink]="['/posts']"
+  >
+    Go To List
+  </button>
+  <div class="card bg-warning" style="width: 18rem" *ngIf="userDetails">
+    <img
+      class="card-img-top"
+      src="../../../../assets/img/1000_F_133356987_eda1oX2LWvlQVLSKN0OKZWl5xmYVcpF6.jpg"
+      alt="Card image cap"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Name: {{ userDetails.name }}</h5>
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item list-group-item-secondary">
+          Username: {{ userDetails.username }}
+        </li>
+        <li class="list-group-item list-group-item-success">
+          Email: {{ userDetails.email }}
+        </li>
+        <li class="list-group-item list-group-item-danger">
+          Street: {{ userDetails.address.street }}
+        </li>
+        <li class="list-group-item list-group-item-danger">
+          Suite: {{ userDetails.address.suite }}
+        </li>
+        <li class="list-group-item list-group-item-danger">
+          City: {{ userDetails.address.city }}
+        </li>
+        <li class="list-group-item list-group-item-danger">
+          Zipcode: {{ userDetails.address.zipcode }}
+        </li>
+        <li class="list-group-item list-group-item-warning">
+          Latitude: {{ userDetails.address.geo.lat }}
+        </li>
+        <li class="list-group-item list-group-item-warning">
+          Longitute: {{ userDetails.address.geo.lng }}
+        </li>
+        <li class="list-group-item list-group-item-warning">
+          Phone: {{ userDetails.phone }}
+        </li>
+        <li class="list-group-item list-group-item-info">
+          Website: {{ userDetails.website }}
+        </li>
+        <li class="list-group-item list-group-item-light">
+          Company Name: {{ userDetails.company.name }}
+        </li>
+        <li class="list-group-item list-group-item-light">
+          {{ userDetails.company.catchPhrase }}
+        </li>
+        <li class="list-group-item list-group-item-light">
+          {{ userDetails.company.bs }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <button type="button" class="btn btn-warning" [routerLink]="['/posts']">
+    Go To Posts
+  </button>
+</main>

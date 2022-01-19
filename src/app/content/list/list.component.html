@@ -1,0 +1,22 @@
+<main class="main">
+  <div
+    class="card bg-warning"
+    style="width: 18rem"
+    *ngFor="let users of UsersList; let i = index"
+  >
+    <img
+      class="card-img-top"
+      src="../../../assets/img/1000_F_133356987_eda1oX2LWvlQVLSKN0OKZWl5xmYVcpF6.jpg"
+      alt="Card image cap"
+    />
+    <div class="card-body">
+      <button
+        type="button"
+        class="btn btn-outline-light"
+        [routerLink]="['/users', users.id]"
+      >
+        {{ users.name }}
+      </button>
+    </div>
+  </div>
+</main>

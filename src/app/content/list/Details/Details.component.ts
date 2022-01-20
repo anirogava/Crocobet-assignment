@@ -18,16 +18,18 @@ export class DetailsComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router
   ) {}
-
+  // initUserDetails gets users details by id, route will be changed based on user id
   private initUserDetails() {
     const id = this.activatedRoute.snapshot.params['id'];
     this.apiService
       .getOneUser(id)
       .subscribe((data) => (this.userDetails = data));
   }
+  // goToList navigates router to list component
   goToList() {
     this.router.navigate(['list']);
   }
+    // initUserDetails will be called as soon as details component will be initialized
   ngOnInit() {
     this.initUserDetails();
   }

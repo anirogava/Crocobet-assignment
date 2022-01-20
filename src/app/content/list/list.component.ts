@@ -26,7 +26,7 @@ export class ListComponent implements OnInit, OnDestroy {
       this.UsersList = users;
     });
   }
-  // fetchUsers will be called as soon as lis component will be initialized
+  // fetchUsers will be called as soon as list component will be initialized
   ngOnInit() {
     this.fetchUsers();
   }
